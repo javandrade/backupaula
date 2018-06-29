@@ -1,0 +1,26 @@
+---
+- name: isntalando Jenkins
+  hosts: automation
+  tasks:
+   - name: install dependecias
+     yum:
+      name: "{{ item }}"
+     with_items:
+      - wget
+      - java
+      - git
+
+   - name: install repo
+     command: "wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo"
+
+   - name: install key
+     command: "rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key"
+
+   - name: install jenkins
+     yum:
+      name: jenkins
+      
+     
+     
+    
+   

@@ -1,0 +1,13 @@
+---
+- name: add diretorios blue e green
+  hosts: docker
+  remote_user: root
+  tasks:
+   - name: instalando blue e green
+     file:
+      path: "{{ item }}"
+      state: directory
+     with_items:
+       - /blule
+       - /green    
+

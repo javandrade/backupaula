@@ -1,0 +1,6 @@
+---
+- name: instalando modulo pip
+  hosts: docker
+   - name: instalando modulo
+     pip:
+      name: docker-py

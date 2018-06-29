@@ -1,0 +1,18 @@
+---
+- name: subindo um containers
+  hosts: docker
+  remote_user: root
+  tasks:
+   - name: subindo container
+     docker_container:
+       name: green
+       image: httpd
+       state: started
+       command: /bin/bash
+
+   - name: subindo container
+     docker_container:
+       name: blue
+       image: httpd
+       state: started
+       command: /bin/bash

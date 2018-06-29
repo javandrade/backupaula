@@ -1,0 +1,11 @@
+---
+- name: add os dir. para o volume blue green deploy
+  hosts: docker
+  tasks:
+  - name: add os diretorios blue e green
+    file:
+     path: "{{ item }}"
+     state: directory
+    with_items:
+      - /blue
+      - /green

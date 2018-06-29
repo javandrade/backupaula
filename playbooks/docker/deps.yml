@@ -1,0 +1,14 @@
+---
+- name: instalando deps
+  hosts: docker
+  remote_user: root
+  tasks:
+   - name: instalando python-pip
+     apt:
+      name: python-pip
+
+
+   - name: instalando a dependencia do python com docker
+     pip:
+      name: docker-py
+  
